@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhores Redes Sociais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .chart-container {
+            margin-bottom: 50px;
+        }
+        .links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .links a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+        }
+        .links a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Melhores Redes Sociais</h1>
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="socialMediaChart"></canvas>
+        </div>
+
+        <div class="links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Adicionando Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('socialMediaChart').getContext('2d');
+        const socialMediaChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Facebook', 'Instagram', 'Twitter', 'LinkedIn'],
+                datasets: [{
+                    label: 'Número de Usuários (bilhões)',
+                    data: [2.9, 2, 0.4, 0.8],
+                    backgroundColor: [
+                        '#3b5998',
+                        '#C13584',
+                        '#1DA1F2',
+                        '#0077B5'
+                    ],
+                    borderColor: [
+                        '#3b5998',
+                        '#C13584',
+                        '#1DA1F2',
+                        '#0077B5'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
